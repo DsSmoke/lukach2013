@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алексей Лукач - Мастер по ремонту стиральных машин</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            background-color: #333;
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4fa1f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .about {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #4fa1f9;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .about img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(79, 161, 249, 0.6);
+        }
+        .about h1 {
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-top: 1rem;
+        }
+        .about p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 1rem auto 0;
+            line-height: 1.5;
+        }
+        .services, .portfolio, .testimonials, .blog, .faq, .contact {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .services h2, .portfolio h2, .testimonials h2, .blog h2, .faq h2, .contact h2 {
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4fa1f9;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .services-list, .blog-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .service-item, .blog-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s;
+            border: 2px solid #4fa1f9;
+        }
+        .service-item:hover, .blog-item:hover {
+            transform: scale(1.05);
+            border-color: #1e3c72;
+        }
+        .service-item h3, .blog-item h3 {
+            font-size: 1.8rem;
+            color: #4fa1f9;
+        }
+        .service-item p, .blog-item p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .blog-item a {
+            display: block;
+            margin-top: 1rem;
+            color: #4fa1f9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .blog-item a:hover {
+            color: #1e3a5f;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+        .portfolio-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #4fa1f9;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(79, 161, 249, 0.6);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .portfolio-item h3 {
+            font-size: 1.8rem;
+            color: #1e3a5f;
+            padding: 1rem;
+            margin: 0;
+        }
+        .portfolio-item p {
+            padding: 0 1rem 1rem;
+            color: #666;
+            font-size: 1rem;
+        }
+        .testimonial {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: left;
+            border: 2px solid #4fa1f9;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .testimonial:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(79, 161, 249, 0.6);
+        }
+        .testimonial img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #4fa1f9;
+            object-fit: cover;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin: 0;
+            flex: 1;
+        }
+        .testimonial .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: #ffc107;
+        }
+        .testimonial .rating span {
+            font-size: 1.2rem;
+        }
+        .testimonial span {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+        .faq-item {
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .faq-item h3 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .faq-item p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4fa1f9;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .contact a {
+            color: #4fa1f9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .contact a:hover {
+            color: #1e3a5f;
+        }
+        footer {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 0;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .services-list, .blog-list, .portfolio-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-item, .blog-item, .portfolio-item {
+                width: 90%;
+            }
+            .about img {
+                width: 100px;
+                height: 100px;
+            }
+            .about h1 {
+                font-size: 2rem;
+            }
+            .about p {
+                font-size: 1rem;
+            }
+            .services h2, .portfolio h2, .testimonials h2, .blog h2, .faq h2, .contact h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav a {
+                font-size: 1em;
+            }
+            .about h1 {
+                font-size: 1.5rem;
+            }
+            .about p {
+                font-size: 0.9rem;
+            }
+            .services h2, .portfolio h2, .testimonials h2, .blog h2, .faq h2, .contact h2 {
+                font-size: 1.5rem;
+            }
+            .service-item, .blog-item, .portfolio-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Алексей Лукач</h1>
+        <p>Мастер по ремонту стиральных машин</p>
+    </header>
+    <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#testimonials">Отзывы</a>
+        <a href="#blog">Блог</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+    <div class="container">
+        <section id="about" class="about">
+            <img src="img/photo.jpg" alt="Алексей Лукач">
+            <h1>Обо мне</h1>
+            <p>Привет! Меня зовут Алексей Лукач, и я профессиональный мастер по ремонту стиральных машин с более чем 10-летним опытом. Я помогаю своим клиентам быстро и качественно решать проблемы с техникой.</p>
+        </section>
+        <section id="services" class="services">
+            <h2>Услуги</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Ремонт стиральных машин</h3>
+                    <p>Качественный ремонт любых моделей стиральных машин с гарантией.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Установка и подключение</h3>
+                    <p>Профессиональная установка и подключение стиральных машин.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Консультации и диагностика</h3>
+                    <p>Проведение диагностики и консультации по эксплуатации техники.</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <h2>Портфолио</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="img/project1.jpg" alt="Работа 1">
+                    <h3>Замена барабана</h3>
+                    <p>Замена барабана в стиральной машине Bosch.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="img/project2.jpg" alt="Работа 2">
+                    <h3>Ремонт платы управления</h3>
+                    <p>Ремонт платы управления в стиральной машине LG.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="img/project3.jpg" alt="Работа 3">
+                    <h3>Установка новой машины</h3>
+                    <p>Установка и подключение новой стиральной машины Samsung.</p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="testimonials">
+            <h2>Отзывы</h2>
+            <div class="testimonial">
+                <img src="img/customer1.jpg" alt="Отзыв 1">
+                <p>Алексей помог нам с ремонтом стиральной машины. Очень довольны результатом и качеством работы!</p>
+                <div class="rating">
+                    <span>★★★★★</span>
+                </div>
+                <span>Иван Иванов</span>
+            </div>
+            <div class="testimonial">
+                <img src="img/customer2.jpg" alt="Отзыв 2">
+                <p>Отличный специалист! Быстро приехал и починил машину. Рекомендую всем!</p>
+                <div class="rating">
+                    <span>★★★★★</span>
+                </div>
+                <span>Ольга Смирнова</span>
+            </div>
+        </section>
+        <section id="blog" class="blog">
+            <h2>Блог</h2>
+            <div class="blog-list">
+                <div class="blog-item">
+                    <h3>Как продлить срок службы стиральной машины</h3>
+                    <p>Несколько полезных советов по уходу за стиральной машиной, чтобы она служила дольше.</p>
+                    <a href="#">Читать далее</a>
+                </div>
+                <div class="blog-item">
+                    <h3>Как выбрать стиральную машину</h3>
+                    <p>Руководство по выбору стиральной машины для вашего дома.</p>
+                    <a href="#">Читать далее</a>
+                </div>
+                <div class="blog-item">
+                    <h3>Частые поломки и их причины</h3>
+                    <p>Обзор самых распространенных поломок стиральных машин и их причин.</p>
+                    <a href="#">Читать далее</a>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>Сколько стоит ремонт стиральной машины?</h3>
+                <p>Стоимость ремонта зависит от сложности поломки и необходимых запчастей. Средняя стоимость ремонта составляет от 2000 до 5000 рублей.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Как долго длится ремонт?</h3>
+                <p>Время ремонта зависит от сложности работы. В большинстве случаев ремонт занимает от 1 до 3 часов.</p>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Контакты</h2>
+            <p>Связаться со мной можно по телефону: <a href="tel:+79999999999">+7 (999) 999-99-99</a> или по электронной почте: <a href="mailto:example@mail.com">example@mail.com</a></p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Алексей Лукач. Все права защищены.</p>
+    </footer>
+</body>
+</html>
