@@ -175,6 +175,7 @@
             padding: 1rem;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
+            flex-wrap: wrap;
         }
         .testimonial:hover {
             transform: scale(1.05);
@@ -197,6 +198,8 @@
             align-items: center;
             gap: 0.2rem;
             color: #ffc107;
+            flex-basis: 100%;
+            text-align: right;
         }
         .testimonial .rating span {
             font-size: 1.2rem;
@@ -205,6 +208,8 @@
             display: block;
             margin-top: 0.5rem;
             font-weight: bold;
+            flex-basis: 100%;
+            text-align: right;
         }
         .faq-item {
             margin: 1rem 0;
@@ -255,11 +260,7 @@
                 font-size: 1.2em;
             }
             nav {
-                flex-direction: column;
-            }
-            .services-list, .blog-list, .portfolio-grid {
-                flex-direction: column;
-                align-items: center;
+                display: none;
             }
             .service-item, .blog-item, .portfolio-item {
                 width: 90%;
@@ -301,6 +302,9 @@
             .service-item, .blog-item, .portfolio-item {
                 width: 100%;
             }
+            .testimonial p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -320,7 +324,7 @@
     </nav>
     <div class="container">
         <section id="about" class="about">
-            <img src="img/photo.jpg" alt="Алексей Лукач">
+            <img src="img/alex.jpg" alt="Алексей Лукач">
             <h1>Обо мне</h1>
             <p>Привет! Меня зовут Алексей Лукач, и я профессиональный мастер по ремонту стиральных машин с более чем 10-летним опытом. Я помогаю своим клиентам быстро и качественно решать проблемы с техникой.</p>
         </section>
@@ -345,17 +349,17 @@
             <h2>Портфолио</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="img/project1.jpg" alt="Работа 1">
+                    <img src="img/portfolio1.jpg" alt="Работа 1">
                     <h3>Замена барабана</h3>
                     <p>Замена барабана в стиральной машине Bosch.</p>
                 </div>
                 <div class="portfolio-item">
-                    <img src="img/project2.jpg" alt="Работа 2">
+                    <img src="img/portfolio2.jpg" alt="Работа 2">
                     <h3>Ремонт платы управления</h3>
                     <p>Ремонт платы управления в стиральной машине LG.</p>
                 </div>
                 <div class="portfolio-item">
-                    <img src="img/project3.jpg" alt="Работа 3">
+                    <img src="img/portfolio3.jpg" alt="Работа 3">
                     <h3>Установка новой машины</h3>
                     <p>Установка и подключение новой стиральной машины Samsung.</p>
                 </div>
@@ -364,7 +368,7 @@
         <section id="testimonials" class="testimonials">
             <h2>Отзывы</h2>
             <div class="testimonial">
-                <img src="img/customer1.jpg" alt="Отзыв 1">
+                <img src="img/testimonial1.jpg" alt="Отзыв 1">
                 <p>Алексей помог нам с ремонтом стиральной машины. Очень довольны результатом и качеством работы!</p>
                 <div class="rating">
                     <span>★★★★★</span>
@@ -372,7 +376,7 @@
                 <span>Иван Иванов</span>
             </div>
             <div class="testimonial">
-                <img src="img/customer2.jpg" alt="Отзыв 2">
+                <img src="img/testimonial2.jpg" alt="Отзыв 2">
                 <p>Отличный специалист! Быстро приехал и починил машину. Рекомендую всем!</p>
                 <div class="rating">
                     <span>★★★★★</span>
