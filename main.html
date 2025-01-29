@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сеть автосервиса</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>Сеть автосервиса</h1>
+</header>
+
+<nav>
+    <a href="#branches">Филиалы</a>
+    <a href="#services">Услуги</a>
+    <a href="#appointment">Запись</a>
+</nav>
+
+<div class="container">
+    <section id="branches" class="section">
+        <h2>Наши филиалы</h2>
+        <div class="branch">
+            <img src="img3.jpg" alt="Филиал 1" class="large-image">
+            <h4>Филиал 1</h4>
+            <p>Адрес: ул. Ленина, 10</p>
+            <p>Часы работы: 09:00 - 18:00</p>
+        </div>
+        <div class="branch">
+            <img src="img4.jpg" alt="Филиал 2" class="large-image">
+            <h4>Филиал 2</h4>
+            <p>Адрес: ул. Кирова, 15</p>
+            <p>Часы работы: 10:00 - 19:00</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Наши услуги</h2>
+        <div class="service">
+            <img src="img1.jpg" alt="Замена масла">
+            <h4>Замена масла</h4>
+            <p>Цена: 500 руб.</p>
+        </div>
+        <div class="service">
+            <img src="img2.jpg" alt="Диагностика двигателя">
+            <h4>Диагностика двигателя</h4>
+            <p>Цена: 1000 руб.</p>
+        </div>
+    </section>
+
+    <section id="appointment" class="section">
+        <h2>Записаться на обслуживание</h2>
+        <form id="appointment-form">
+            <label for="name">Имя:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="branch">Выберите филиал:</label><br>
+            <select id="branch" name="branch">
+                <option value="branch1">Филиал 1</option>
+                <option value="branch2">Филиал 2</option>
+            </select><br><br>
+
+            <label for="service">Выберите услугу:</label><br>
+            <select id="service" name="service">
+                <option value="oil_change">Замена масла</option>
+                <option value="engine_diagnostics">Диагностика двигателя</option>
+            </select><br><br>
+
+            <button type="submit">Записаться</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Сеть автосервиса. Все права защищены.</p>
+</footer>
+</body>
+</html>
